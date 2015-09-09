@@ -1,4 +1,4 @@
-Class = require "libraries.middleclass" -- Include the Middleclass system
+Class = require "middleclass" -- Include the Middleclass system
 
 function love.load()
 	-- Load the classes
