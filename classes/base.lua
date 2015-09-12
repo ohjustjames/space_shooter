@@ -1,9 +1,11 @@
 Base = Class("Base")
 --[[
 --	Base.initialize
---	Room - The room that the object is updated and drawn in
+--	Room - The room that the object is allowed to exist in
 --	X - The X position that the object starts in
 --	Y - The Y position that the object starts in
+--	Width - The width of the object
+--	Height - The height of the object
 --	speed - The speed that the object moves at
 --	Health - The health of the object
 --]]

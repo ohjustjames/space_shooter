@@ -1,7 +1,0 @@
-Aim of the game
-	Get as many points as you can and take out the progressively faster enemies!
-
-Objects
-	Player(10HP) - Control the player with WASD and Spacebar to shoot.
-	Enemy (2HP) - Appears from the top of the screen randomly. The more points the player gets, the more frequently enemies spawn.
-	HealthUp(1HP) - Appears from the top of the screen rarely. Gives the player +1 Health.
