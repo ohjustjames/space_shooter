@@ -18,5 +18,5 @@ function love.update(dt)
 end
 
 function love.mousereleased(x, y, button)
-	m:mousereleased(x, y, button)
+	o:mousereleased(x, y, button)
 end
