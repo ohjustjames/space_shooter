@@ -27,20 +27,12 @@ function Base:draw()
 	love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
 end
 
-function Base:getInactive()
-	if (self.active == false) then
-		return true
-	else
-		return false
-	end
+function Base:getActive()
+	return self.active
 end
 
 function Base:setActive(active)
 	self.active = active
-end
-
-function Base:deactivate()
-	self.active = false
 end
 
 function Base:getRoom()
