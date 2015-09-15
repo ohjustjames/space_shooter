@@ -38,6 +38,16 @@ function love.draw()
 	end
 end
 
+function love.mousereleased(x, y, button)
+	for ci, category in pairs(Objects) do
+		for oi, obj in pairs(category) do
+			if (obj:getRoom() == Room) then
+				if (obj.mousereleased) then obj:mousereleased(x, y, button) end
+			end
+		end
+	end
+end
+
 function love.mousepressed(x, y, button)
 	for ci, category in pairs(Objects) do
 		for oi, obj in pairs(category) do
@@ -46,15 +56,5 @@ function love.mousepressed(x, y, button)
 			end
 		end
 
-	end
-end
-
-function love.mousereleased(x, y, button)
-	for ci, category in pairs(Objects) do
-		for oi, obj in pairs(category) do
-			if (obj:getRoom() == Room) then
-				if (obj.mousereleased) then obj:mousereleased(x, y, button) end
-			end
-		end
 	end
 end

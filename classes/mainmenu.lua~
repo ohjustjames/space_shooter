@@ -16,12 +16,12 @@ function MainMenu:draw()
 	QuitButton:draw()
 end
 
-function MainMenu:mousepressed(x, y, b)
-	StartButton:mousepressed(x, y, b)
-	QuitButton:mousepressed(x, y, b)
-end
-
 function MainMenu:mousereleased(x, y, b)
 	StartButton:mousereleased(x, y, b)
 	QuitButton:mousereleased(x, y, b)
+end
+
+function MainMenu:mousepressed(x, y, b)
+	StartButton:mousepressed(x, y, b)
+	QuitButton:mousepressed(x, y, b)
 end

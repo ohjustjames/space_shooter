@@ -28,7 +28,7 @@ function Button:initialize(room, x, y, text, operation)
 end
 
 function Button:update(dt)
-	-- Make the button flash when clicked
+	-- Button flash
 	if (self.clicked) then
 		self.colour = BUTTON_FLASH_COLOUR
 	else
