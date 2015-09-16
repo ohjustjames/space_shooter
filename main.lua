@@ -1,14 +1,31 @@
 Class = require "libraries.middleclass" -- Include the Middleclass system
+--[[
+-- Room 0 - Main menu
+-- Room 1 - Game
+-- Room 2 - Game over
+-- Room 3 - Credits
+--]]
 Room = 0
 Objects = {}
 
 function love.load()
 	-- Load the classes
+	require "snippets"
 	require "classes.base"
 	require "classes.button"
 	require "classes.mainmenu"
+	require "classes.player"
 	Objects["rooms"] = {}
 	table.insert(Objects["rooms"], MainMenu())
+end
+
+function newGame()
+	Room = 1
+	Objects["players"] = {}
+	Objects["enemies"] = {}
+	Objects["powerups"] = {}
+
+	table.insert(Objects["players"], Player())
 end
 
 function love.update(dt)

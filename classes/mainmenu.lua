@@ -2,7 +2,7 @@ MainMenu = Class("MainMenu", Base)
 
 function MainMenu:initialize()
 	Base.initialize(self, 0, 0, 0, 0, 0, 0, 1)
-	StartButton = Button(0, 10, 10, "Start Game", function() --[[TODO: Start Game]] end)
+	StartButton = Button(0, 10, 10, "Start Game", function() newGame() end)
 	QuitButton = Button(0, 10, 75, "Quit Game", function() --[[TODO: Quit Game]] end)
 end
 
