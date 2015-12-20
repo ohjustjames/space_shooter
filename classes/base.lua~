@@ -43,8 +43,3 @@ function Base:getRoom()
 	return self.room
 end
 
-function Base:shoot()
-	if (self.canShoot) then
-		-- KAYTRA TODO: Create bullet instance
-	end
-end
