@@ -1,6 +1,6 @@
 Player = Class("Player", Base)
 
--- KAYTRA TODO: SHOOT, PAUSE
+-- KAYTRA TODO: SHOOT, PAUSE, Make these caps variables static variables
 PLAYER_SIZE = 32
 PLAYER_SPEED = 500
 PLAYER_FIRERATE = 50

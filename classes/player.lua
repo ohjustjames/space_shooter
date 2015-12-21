@@ -47,6 +47,7 @@ function Player:update(dt)
 
 	-- Shoot
 	if (self.control.shoot) then
+		-- KAYTRA TODO: Create bullet (playerx, playery, bulletspeed)
 	end
 end
 

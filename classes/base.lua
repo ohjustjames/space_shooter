@@ -10,8 +10,7 @@ Base = Class("Base")
 --	Health - The health of the object
 --]]
 
--- KAYTRA TODO: Base objects should be able to shoot
-function Base:initialize(room, x, y, width, height, speed, health, facingNorth)
+function Base:initialize(room, x, y, width, height, speed, health)
 	self.active = true -- The object is destroyed if this is false
 
 	self.room = room
@@ -22,8 +21,6 @@ function Base:initialize(room, x, y, width, height, speed, health, facingNorth)
 	self.speed = speed
 	self.health = health
 	self.maxHealth = health
-	self.facingNorth = facingNorth
-	self.canShoot = false
 end
 
 function Base:draw()
@@ -41,10 +38,4 @@ end
 
 function Base:getRoom()
 	return self.room
-end
-
-function Base:shoot()
-	if (self.canShoot) then
-		-- KAYTRA TODO: Create bullet instance
-	end
 end
