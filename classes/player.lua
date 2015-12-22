@@ -3,7 +3,7 @@ Player = Class("Player", Base)
 -- KAYTRA TODO: SHOOT, PAUSE, Make these caps variables static variables
 PLAYER_SIZE = 32
 PLAYER_SPEED = 500
-PLAYER_FIRERATE = 50
+PLAYER_FIRERATE = 0.2
 
 function Player:initialize()
 	Base.initialize(self, 1, middleOfScreen(true, PLAYER_SIZE), middleOfScreen(false, PLAYER_SIZE) + 200, PLAYER_SIZE, PLAYER_SIZE, PLAYER_SPEED, 10)
@@ -11,6 +11,8 @@ function Player:initialize()
 	-- Setup TLbind controls
 	self.binds, self.control = love.filesystem.load("libraries/TLbind.lua")()
 	self.binds.keys = {w = "up", s = "down", a = "left", d = "right", [" "] = "shoot", escape = "pause"}
+	self.canShoot = true
+	self.timer = 0
 end
 
 function Player:update(dt)
@@ -45,9 +47,18 @@ function Player:update(dt)
 		end
 	end
 
-	-- Shoot
-	if (self.control.shoot) then
-		-- KAYTRA TODO: Create bullet (playerx, playery, bulletspeed)
+	-- See if we can shoot & reduce the timer if we can't
+	if (self.canShoot) then
+		if (self.control.shoot) then
+			createBullet(self.x + ((self.width / 2) - (BULLET_SIZE / 2)), self.y - BULLET_SIZE, 100)
+			self.timer = PLAYER_FIRERATE
+			self.canShoot = false
+		end
+	else
+		self.timer = self.timer - (1 * dt)
+		if (self.timer <= 0) then
+			self.canShoot = true
+		end
 	end
 end
 

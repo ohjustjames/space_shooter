@@ -7,11 +7,11 @@ function Bullet:initialize(x, y, speed)
 end
 
 function Bullet:update(dt)
-	-- Move down and destroy bullets outside
-	if (self.y > love.graphics.getHeight()) then
+	-- Move up and destroy bullets that are outside of the room
+	if (self.y < 0) then
 		self:setActive(false)
 	else
-		self.y = self.y + (self.speed * dt)
+		self.y = self.y - (self.speed * dt)
 	end
 end
 
